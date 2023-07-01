@@ -1,0 +1,237 @@
+//1 (map()) Потрібно отримати масив імен студентів та записати їх великими літерами.
+// let studentRecords = [
+//   { name: "John", id: 123, marks: 98 },
+//   { name: "Baba", id: 101, marks: 23 },
+//   { name: "yaga", id: 200, marks: 45 },
+//   { name: "Wick", id: 115, marks: 75 },
+// ];
+
+// 2 (filter()) Припустимо, що ми маємо той самий набір даних, що й вище, але цього разу ми хочемо
+// отримати детальну інформацію про студентів, які набрали більше 50 балів.
+// let studentRecords = [
+//   { name: "John", id: 123, marks: 98 },
+//   { name: "Baba", id: 101, marks: 23 },
+//   { name: "yaga", id: 200, marks: 45 },
+//   { name: "Wick", id: 115, marks: 75 },
+// ];
+
+// 3  (reduce()) Необхідно одержати загальну суму балів студентів.
+// let studentRecords = [
+//   { name: "John", id: 123, marks: 98 },
+//   { name: "Baba", id: 101, marks: 23 },
+//   { name: "yaga", id: 200, marks: 45 },
+//   { name: "Wick", id: 115, marks: 75 },
+// ];
+
+// let sum = studentRecords.reduce((acc, marks));
+
+// 4 (map(), filter()) Необхідно отримати лише імена студентів, які набрали більше 50 балів із того ж набору
+// даних.
+// let studentRecords = [
+//   { name: "John", id: 123, marks: 98 },
+//   { name: "Baba", id: 101, marks: 23 },
+//   { name: "yaga", id: 200, marks: 45 },
+//   { name: "Wick", id: 115, marks: 75 },
+// ];
+
+// 5 (filter(), reduce()) Необхідно отримати загальну суму балів студентів із id більше 120.
+// let studentRecords = [
+//   { name: "John", id: 123, marks: 98 },
+//   { name: "Baba", id: 101, marks: 23 },
+//   { name: "yaga", id: 200, marks: 45 },
+//   { name: "Wick", id: 115, marks: 75 },
+// ];
+// const studentsFiltered = studentRecords.filter(({id})) => id > 120).reduce((acc,el) => acc + el.marks, 0);
+
+// (map(), filter(), reduce()) Необхідно вивести загальну кількість студентів із балами
+//більше 50, отриманими після нарахування заохочення до 15 балів.
+//Використовуючи map(), додається заохочення до 15 балів студентам, які набрали менше 50 балів.
+// Потім використовуємо filter() для масиву студентів, що повертається функцією map().
+// Так ми знайдемо всіх студентів із відмітками понад 50.
+// Нарешті ми використовували функцію reduce() для повертаного функцією filter()
+// масиву студентів, щоб повернути суму оцінок.
+// let studentRecords = [
+//   { name: "John", id: 123, marks: 98 },
+//   { name: "Baba", id: 101, marks: 23 },
+//   { name: "yaga", id: 200, marks: 45 },
+//   { name: "Wick", id: 115, marks: 75 },
+// ];
+// const sunStudents = studentRecords.map(student) => {
+//     if(student.marks < 50) {
+//         students.marks += 15
+//         return student
+//     }
+// }.filter(student => student.marks > 50).reduce((acc, {marks}) => acc + marks, 0)
+
+// Сортування складних типів
+// Виконати сортування масиву об'єктів, не змінюючи вихідний масив:
+// - за зростанням та зменшенням значення якості price.
+// - на ім'я в алфавітному та зворотному алфавітному порядку.
+// */
+
+// const items = [
+//   { name: "Samsung", price: 2000 },
+//   { name: "Asus", price: 2500 },
+//   { name: "LG", price: 1900 },
+//   { name: "Dell", price: 1200 },
+//   { name: "BenQ", price: 900 },
+// ];
+
+// const newItems = [...items].sort((a, b) => a.price - b.price);
+// console.log(newItems);
+// const newItems2 = [...items].sort((a, b) => b.price - a.price);
+// console.log(newItems2);
+// const newItems3 = [...items].sort((a, b) => a.name.localeCompare(b.name));
+// console.log(newItems3);
+// const newItems4 = [...items].sort((a, b) => b.name.localeCompare(a.name));
+// console.log(newItems4);
+// const newItems5 = items.toSorted((a, b) => a.price - b.price);
+// console.log(items);
+// console.log(newItems5);
+
+// Напиши функцію конструктор User для створення користувача з такими властивостями
+//a. userName - ім'я, рядок
+//b. age - вік, число
+//c. numbersOfPost - кількість постів, число
+//d. функція очікує 1 параметр - об'єкт налаштувань з однойменними властивостями
+
+//Додай метод getInfo(), який повертає рядок:
+//`Користувачеві ${} ${} років і в нього ${} публікацій.`
+
+// const User = function ({ userName, age, numbersOfPost }) {
+//   this.userName = userName;
+//   this.age = age;
+//   this.numbersOfPost = numbersOfPost;
+//   // this.getInfo = function () {
+//   //   this.userName = userName;
+//   //   return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`;
+//   // };
+// };
+// User.prototype.getInfo() = function () {
+//   return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`;
+// }
+// const user = new User({ userName: "Mango", age: 12, numbersOfPost: 12 });
+// const user2 = new User({ userName: "Polly", age: 26, numbersOfPost: 192 });
+// console.log(user2);
+
+// Var Server
+
+// const User = function ({ userName, age, numbersOfPost }) {
+//   this.userName = userName;
+//   this.age = age;
+//   this.numbersOfPost = numbersOfPost;
+//   //   this.getInfo = function () {
+//   //     return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`;
+//   //   };
+// };
+
+// User.prototype.getInfo = function () {
+//   return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`;
+// };
+// const user = new User({ userName: "Mango", age: 12, numbersOfPost: 45 });
+// console.log(user);
+// const user2 = new User({ userName: "Tomat", age: 42, numbersOfPost: 33 });
+// console.log(user2.getInfo());
+
+// Напиши функцію конструктор Storage, який створює об'єкти
+//Для управління складом товарів.
+//При виклику отримуватиме один агрумент - початковий масив товарів,
+//і записувати їх у властивість items.
+//Додай методи класу:
+//getItems() - повертайте масив товарів
+//addItems(item) - отримує новий товар та додає його до поточних
+//removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
+//++++++++++++++++++++++++++++++++++++++++++
+// const storage = new Storage(["apple", "mango"]);
+// console.log(storage);
+// storage.addItems("banana");
+// storage.removeItem("apple");
+// console.log(storage);
+
+// function Storage(items) {
+//   this.items = items;
+// }
+// Storage.prototype.getItems = function{
+//   return this.items;
+// };
+// Storage.prototype.addItems = function{
+//   this.items.push(item);
+// };
+// Storage.prototype.removeItem = function{
+//   const index = this.items.indexOf(item)
+//   if (index === -1){
+//     return alert("not find")
+//   } this.items.splice(index, 1)
+//   const storage = new Storage;}
+
+// class Storage {
+//   constructor(arr) {
+//     this.arr = arr;
+//   }
+//   getItems() {
+//     return this.arr;
+//   }
+//   addItems(newItem) {
+//     this.items.push(newItem);
+//   }
+//   removeItem(item) {
+//     this.arr = this.arr.filter((el) => el !== item);
+//   }
+// }
+// const storage = new Storage(["apple", "mango"]);
+// console.log(storage);
+// storage.addItems("banana");
+// storage.removeItem("apple");
+
+// console.log(storage);
+
+// Vitalii
+// class Storage {
+//   constructor(arr) {
+//     this.arr = arr;
+//   }
+//   getItems() {
+//     return this.arr;
+//   }
+//   addItems(newItem) {
+//     this.arr.push(newItem);
+//   }
+//   removeItem(item) {
+//     this.arr = this.arr.filter((el) => el !== item);
+//   }
+// }
+// const storage = new Storage(["apple", "mango"]);
+// console.log(storage);
+// storage.addItems("banana");
+// storage.removeItem("apple");
+// console.log(storage);
+
+//Реалізуйте клас Worker (Працівник), який матиме такі властивості: name (ім'я),
+//surname (прізвище), rate (ставка за день роботи), days (кількість відпрацьованих
+//днів). Також клас повинен мати метод getSalary(), який виводитиме зарплату
+//працівника. Зарплата - це добуток (множення) ставки rate на кількість
+//відпрацьованих днів days. І метод getFullName() - ім'я та прізвище працівника.
+// class Worker {
+//   constructor(name, surname, rate, days) {
+//     this.name = name;
+//     this.surname = surname;
+//     this.rate = rate;
+//     this.days = days;
+//   }
+//   getSalary() {
+//     return this.rate * this.days;
+//   }
+//   get getFullName() {
+//     return `${this.name} ${this.surname}`;
+//   }
+// }
+// // console.log(object);
+
+// const worker = new Worker("Іван", "Іванов", 10, 31);
+
+// console.log(worker.name); //Виведе 'Іван'
+// console.log(worker.surname); //Виведе 'Іванов'
+// console.log(worker.getFullName); //Виведе 'Іванов Іван'
+// console.log(worker.rate); //Виведе 10
+// console.log(worker.days); //Виведе 31
+// console.log(worker.getSalary()); //Виведе 310 - тобто 10 * 31
